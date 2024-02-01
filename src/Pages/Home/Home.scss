@@ -1,0 +1,23 @@
+body {
+    padding: 0 50px;
+}
+.banner {
+
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-image: url(../../assets/falaise.png);
+    padding: 100px 100px;
+    max-width: 400;
+    min-height: 50px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: 50%;
+    
+    
+    
+   
+    & h1{
+        color: white;
+    }
+}
