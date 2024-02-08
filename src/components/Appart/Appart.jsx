@@ -1,10 +1,15 @@
-import React from 'react';
+
 import './Appart.scss'
 
-function Appart() {
-    return(
+fetch("logements.json")
+.then((res)=>res.json())
+.then((res)=>console.log(res))
+
+function Appart(props) {
+    
+    return (
         <div className='Appart'>
-            <p>Titre de la location</p>
+            <p>{props.title}</p>
         </div>
     )
 }

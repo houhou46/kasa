@@ -1,0 +1,28 @@
+.appartment__description {
+    .description__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        background-color: #FF6060;
+        border-radius: 5px;
+        padding: 10px 20px 10px 10px;
+        margin-bottom: 0;
+        
+        i {
+            color:white;
+        }
+    }
+    .description__content {
+        background-color: #f6f6f6;
+        border-radius: 5px;
+        color: black;
+        margin-top: 0;
+        padding: 10px;
+        
+    }
+}
+.flex {
+    display: flex;
+    gap: 76px;
+}

@@ -3,7 +3,6 @@ import "./Appartment.scss";
 
 
 
-
 function Appartment() {
     return (
         <div className="Appartment">
