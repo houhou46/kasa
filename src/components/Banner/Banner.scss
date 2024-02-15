@@ -2,18 +2,13 @@ body {
     padding: 0 50px;
 
 }
-.banner {
+.banners img{
 
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    background-image: url(../../assets/falaise.png);
-    padding: 100px 100px;
-    max-width: 400;
-    min-height: 50px;
-    border-radius: 15px;
-    background-size: cover;
-    background-position: 50%;
-    opacity: 0.6;
-    mix-blend-mode: darken;
+   width: 1240px; 
+   height: 223px;
+   object-fit: cover;
+   border-radius: 25px;
+   background: #000;
+   
+    
 }

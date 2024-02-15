@@ -11,6 +11,8 @@
         
         i {
             color:white;
+            animation: drop;
+
         }
     }
     .description__content {
@@ -19,8 +21,19 @@
         color: black;
         margin-top: 0;
         padding: 10px;
+       
+
+        
         
     }
+}
+
+@keyframes drop{
+    0% {
+        transform: rotate(-90deg);
+    }
+    
+   
 }
 .flex {
     display: flex;
