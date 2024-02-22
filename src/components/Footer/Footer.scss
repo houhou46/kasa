@@ -1,17 +1,12 @@
 .footer {
-    padding: 66px 464px 29px 463px;
-    
+    padding: 50px;
     background-color: black;
     color: white;
     text-align: center;
-    display: grid;
-    place-items: center;
-    
 
-        &__logo img {
+    &__logo img {
         width: 122px;
-        height:39px;
+        height: 39px;
         margin-bottom: 28px;
-    
     }
 }

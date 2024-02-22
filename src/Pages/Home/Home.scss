@@ -29,15 +29,18 @@ body {
 }
 
 .Appartment {
-    width: 1240px;
-    height:auto;
+    max-width: 1240px;
+    width: 100%;
+    height: auto;
     background-color: #f6f6f6;
-    margin-top: 100px;
+    margin: 100px auto 50px;
     border-radius: 15px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     color: white;
-    margin-bottom: 50px;
     padding: 56px 50px 43px 50px;
+    box-sizing: border-box;
+
+    
 }
