@@ -3,39 +3,66 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Rental.scss";
 import Dropdown from "../../components/Dropdown/Dropdown";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 
 export default function Rental() {
-  const location = useLocation();
-  console.log("location:", location);
-  console.log("rent id is :", location.state.logementId);
+  const { logementId } = useParams();
+  const [rent, setRent] = useState({ pictures: [], tags: [], equipments: [] });
+  const [index, setIndex] = useState(0)
+  const navigate = useNavigate()
+  const [currentPicture, setCurrentPicture] = useState(0)
 
-  const [rent, setRent] = useState(null);
-  useEffect(fetchRentalData, [location.state.logementId]);
+  useEffect(fetchRentalData, [logementId, navigate]);
 
   function fetchRentalData() {
-    fetch("logements.json")
+    fetch("/logements.json")
       .then((res) => res.json())
       .then((rents) => {
-        const rent = rents.find(
-          (rent) => rent.id === location.state.logementId
+        const finded = rents.find(
+          (rent) => rent.id === logementId
         );
-        setRent(rent);
+        console.log(finded)
+        // Utiliser useNavigate pour rediriger vers la page d'accueil
+        if (finded == null) return navigate('/');
+        setRent(finded);
       })
       .catch(console.error);
   }
-  if (rent == null) return <div>Error</div>;
+  //const previousSlide = () => {
+    //if (index -1 > rent.pictures.length) {
+     // setIndex(index -1)
+    //} else {
+    //  setIndex(0)
+   // }
+  //}
+  const nextSlide = () => {
+    if (index + 1 < rent.pictures.length) {
+      setIndex(index + 1)
+   } else {
+      setIndex(0)
+    }
+  }
+
+  //const nextSlide = () => {
+    //setCurrentPicture((currentPicture +1 ) % pictures.length)
+  //}
+
+  //const previousSlide
+
 
   return (
     <>
       <Header />
       <div className="rentalpage">
-        <div>
-          <img src={rent.cover} alt="living room" />
-          {/*<img src={require("../../assets/arrow_left.png")} alt="arrow"></img>*/}
+        <div className="rentalpic">
+          <img src={rent.pictures[index]} alt="living room" />
+          <img src={require("../../assets/arrow_left.png")} alt="arrow" className="rentalpic__left" onClick={nextSlide} />
+          <img src={require("../../assets/arrow_right.png")} alt="arrow" className="rentalpic__right" onClick={nextSlide} />
         </div>
-        <div></div>
+        <div className="slide">
+            {currentPicture + 1 } / 
+        </div>
         <div className="rental">
           <div className="rental__top">
             <div>
@@ -44,16 +71,16 @@ export default function Rental() {
             </div>
             <div className="rental__all">
               <div className="rental__owner">
-                <h4>{rent.host.name}</h4>
+                <h4>{rent.host?.name}</h4>
                 <img
-                  src={rent.host.picture}
+                  src={rent.host?.picture}
                   className="rental__id"
                   alt="host"
                 ></img>
               </div>
               <div className="rental__stars">
                 {[1, 2, 3, 4, 5].map((num) => (
-                  <FaStar className={rent.rating > num ? "on" : ""} />
+                  <FaStar key={num} className={rent.rating >= num ? "on" : ""} />
                 ))}
               </div>
             </div>
@@ -69,7 +96,7 @@ export default function Rental() {
             <Dropdown
               title="Equipement"
               content={rent.equipments.map((eq) => (
-                <li>{eq}</li>
+                <li key={eq}>{eq}</li>
               ))}
             />
           </div>

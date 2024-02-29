@@ -9,6 +9,11 @@ body {
    object-fit: cover;
    border-radius: 25px;
    background: #000;
+
+   @media screen and (max-width: 600px) {
+            width: 335px;
+            height: 111px;
+   }
    
     
 }

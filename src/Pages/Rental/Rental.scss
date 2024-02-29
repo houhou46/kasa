@@ -12,6 +12,36 @@
         border-radius: 25px;
     }
 
+.rentalpic {
+    position: relative;
+
+
+         &__left{
+            position: absolute;
+            left: 10px;
+            bottom: 45%;
+            width: 47px;
+            height: 79px;
+}
+
+         &__right {
+            right: 10px;
+            bottom: 45%;
+            position: absolute;
+            width:47px;
+            height: 79px;
+}
+
+.slide {
+    position: absolute;
+    bottom: 20px;
+}
+
+
+
+}
+
+
 }
 
 .rental {
@@ -76,3 +106,5 @@
         }
     }
 }
+
+   

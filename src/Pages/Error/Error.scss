@@ -8,6 +8,10 @@
         font-weight:700;
         margin-bottom: 139px;
         font-family: Montserrat;
+        @media screen and (max-width: 600px) {
+            width: 198px;
+            box-sizing: border-box;
+        }
     }
     h2 {
         font-size: 36px;
