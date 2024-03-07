@@ -3,6 +3,8 @@ import Home from "./Pages/Home/Home";
 import Rental from "./Pages/Rental/Rental";
 import About from "./Pages/About/About";
 import Error from './Pages/Error/Error';
+import "./utils/global.scss"
+import "../src/utils/variables.scss"
 
 function App() {
   return (

@@ -3,18 +3,44 @@
     background-color: black;
     color: white;
     text-align: center;
+    margin: 0 -50px;
+    margin-top: auto;
+      @media screen and (max-width: 600px) {
+        padding: 66px 120px 58px 121px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    
 
     &__logo img {
         width: 122px;
         height: 39px;
         margin-bottom: 28px;
+
+        @media screen and (max-width: 600px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__text {
+        font-size: 24px;
+        @media screen and (max-width: 600px) {
+            font-size: 12px;
+            
+        }
+
     }
 
     @media screen and (max-width: 600px) {
-            min-width: 400px;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            margin-left: 40px;
+        margin: 0 -20px;
+        margin-top: auto;
+
+        //     min-width: 400px;
+        //     width: 100%;
+        //     justify-content: center;
+        //     align-items: center;
+        //     margin-left: 40px;
     }
 }

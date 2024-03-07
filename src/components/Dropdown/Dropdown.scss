@@ -1,6 +1,7 @@
 .appartment__description {
     width: 100%;
     margin-bottom: 50px;
+
     .description__header {
         display: flex;
         justify-content: space-between;
@@ -10,35 +11,52 @@
         border-radius: 5px;
         padding: 10px 20px 10px 10px;
         margin-bottom: 0;
+        font-size: 18px;
+        font-weight: 700;
+       
         
-        
-        i {
-            color:white;
-            animation: drop;
 
+        i {
+            color: white;
+            animation: drop;
+            transition: 0.5s;
+
+            &.rotate {
+                transform: rotate(-180deg);
+            }
         }
     }
+
     .description__content {
         background-color: #f6f6f6;
         border-radius: 5px;
         color: black;
         margin-top: 0;
         padding: 10px;
-       
+        font-size: 18px;
+        font-weight: 400;
 
-        
-        
+        @media screen and (max-width: 600px) {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+
     }
 }
 
-@keyframes drop{
+@keyframes drop {
     0% {
         transform: rotate(-90deg);
     }
-    
-   
+
+
 }
+
 .flex {
     display: flex;
     gap: 76px;
+    @media screen and (max-width: 600px) {
+        gap: 20px;
+    }
 }
